@@ -64,3 +64,10 @@ h4[1].textContent = siteContent['main-content']['about-h4'];
 h4[2].textContent = siteContent['main-content']['services-h4'];
 h4[3].textContent = siteContent['main-content']['product-h4'];
 h4[4].textContent = siteContent['main-content']['vision-h4'];
+
+let pTag = document.querySelectorAll('section div p');
+pTag[0].textContent = siteContent['main-content']['features-content'];
+pTag[1].textContent = siteContent['main-content']['about-content'];
+pTag[2].textContent = siteContent['main-content']['services-content'];
+pTag[3].textContent = siteContent['main-content']['product-content'];
+pTag[4].textContent = siteContent['main-content']['vision-content'];
