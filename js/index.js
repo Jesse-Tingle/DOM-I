@@ -51,3 +51,9 @@ navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
 let cta = document.querySelector('h1');
 cta.textContent = siteContent['cta']['h1'];
+
+let button = document.querySelector('button');
+button.textContent = siteContent['cta']['button'];
+
+let ctaImage = document.querySelector('#cta-img');
+ctaImage.setAttribute('src', siteContent['cta']['img-src']);
