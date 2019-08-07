@@ -71,3 +71,6 @@ pTag[1].textContent = siteContent['main-content']['about-content'];
 pTag[2].textContent = siteContent['main-content']['services-content'];
 pTag[3].textContent = siteContent['main-content']['product-content'];
 pTag[4].textContent = siteContent['main-content']['vision-content'];
+
+let middleImage = document.querySelector('#middle-img');
+middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
