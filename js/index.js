@@ -74,3 +74,21 @@ pTag[4].textContent = siteContent['main-content']['vision-content'];
 
 let middleImage = document.querySelector('#middle-img');
 middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+String.prototype.breakAt = function(breakAt) {
+  return this.substr(0,breakAt) + '\n' + this.substr(breakAt);
+};
+
+let address = siteContent['contact']['address'];
+var spacedAddress = address.breakAt(18);
+console.log(spacedAddress);
+
+
+let contactAdressP1 = document.querySelector('.contact p');
+contactAdressP1.textContent = spacedAddress;
+
+
+
