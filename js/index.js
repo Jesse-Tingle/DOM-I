@@ -50,6 +50,13 @@ navItems[3].textContent = siteContent['nav']['nav-item-4'];
 navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
+//Change navbar text color to green
+let allLinks = document.querySelectorAll('a');
+allLinks.forEach((element, i) => {
+  element.textContent = siteContent['nav'][`nav-item-${i + 1}`];
+  element.style.color = 'green';
+})
+
 //Update h1 - Insearting "\n" to put text on new line
 //h1 is now on 3 lines
 let cta = document.querySelector('h1');
