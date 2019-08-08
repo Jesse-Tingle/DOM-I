@@ -78,17 +78,37 @@ middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
 let contactH4 = document.querySelector('.contact h4');
 contactH4.textContent = siteContent['contact']['contact-h4'];
 
+
+let contactP = document.querySelectorAll('.contact p');
+
 String.prototype.breakAt = function(breakAt) {
-  return this.substr(0,breakAt) + '\n' + this.substr(breakAt);
+  return this.substr(0,breakAt);
 };
 
 let address = siteContent['contact']['address'];
-var spacedAddress = address.breakAt(18);
+spacedAddress = address.breakAt(18);
 console.log(spacedAddress);
 
 
-let contactAdressP1 = document.querySelector('.contact p');
-contactAdressP1.textContent = spacedAddress;
+// String.prototype.breakAt = function(breakAt) {
+//   return this.substr(0,breakAt) + '\n' + this.substr(breakAt);
+// };
+
+// let address = siteContent['contact']['address'];
+// var spacedAddress = address.breakAt(18);
+// console.log(spacedAddress);
+
+
+// let address = siteContent['contact']['address'];
+// var splitAddress = address.split(' ');
+// let addressTop = splitAddress[0] + ' ' + splitAddress[1] + ' ' + splitAddress[2] + ' ' + splitAddress[3];
+// let addressBottom = splitAddress[4] + ' ' + splitAddress[5] + ' ' + splitAddress[6];
+// console.log(addressTop);
+// console.log(addressBottom);
+
+
+
+// contactAdressP1.textContent = spacedAddress;
 
 
 
