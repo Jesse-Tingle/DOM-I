@@ -42,20 +42,39 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //Update navbar
-let navItems = document.querySelectorAll('header nav a');
-navItems[0].textContent = siteContent['nav']['nav-item-1'];
-navItems[1].textContent = siteContent['nav']['nav-item-2'];
-navItems[2].textContent = siteContent['nav']['nav-item-3'];
-navItems[3].textContent = siteContent['nav']['nav-item-4'];
-navItems[4].textContent = siteContent['nav']['nav-item-5'];
-navItems[5].textContent = siteContent['nav']['nav-item-6'];
+// let navItems = document.querySelectorAll('header nav a');
+// navItems[0].textContent = siteContent['nav']['nav-item-1'];
+// navItems[1].textContent = siteContent['nav']['nav-item-2'];
+// navItems[2].textContent = siteContent['nav']['nav-item-3'];
+// navItems[3].textContent = siteContent['nav']['nav-item-4'];
+// navItems[4].textContent = siteContent['nav']['nav-item-5'];
+// navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
 //Change navbar text color to green
 let allLinks = document.querySelectorAll('a');
 allLinks.forEach((element, i) => {
   element.textContent = siteContent['nav'][`nav-item-${i + 1}`];
+})
+
+let homeNavItem = document.createElement('a');
+homeNavItem.textContent = 'Home';
+//console.log(homeNavItem);
+
+let blogNavItem = document.createElement('a');
+blogNavItem.textContent = 'Blog';
+//console.log(blogNavItem);
+
+let nav = document.getElementsByTagName('nav');
+//console.log(nav);
+nav[0].prepend(homeNavItem);
+nav[0].appendChild(blogNavItem);
+
+let addedLinks = document.querySelectorAll('a');
+console.log(addedLinks);
+addedLinks.forEach((element) =>{
   element.style.color = 'green';
 })
+
 
 //Update h1 - Insearting "\n" to put text on new line
 //h1 is now on 3 lines
