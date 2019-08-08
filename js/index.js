@@ -50,7 +50,13 @@ navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
 let cta = document.querySelector('h1');
-cta.textContent = siteContent['cta']['h1'];
+let header1 = siteContent.cta.h1.substring(0, 3);
+let header2 = siteContent.cta.h1.substring(3, 6);
+let header3 = siteContent.cta.h1.substring(6, 14);
+
+let newHeader = `${header1} \n ${header2} \n ${header3}`;
+cta.textContent = newHeader;
+cta.style.whiteSpace = "pre-line";
 
 let button = document.querySelector('button');
 button.textContent = siteContent['cta']['button'];
