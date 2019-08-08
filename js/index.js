@@ -81,34 +81,13 @@ contactH4.textContent = siteContent['contact']['contact-h4'];
 
 let contactP = document.querySelectorAll('.contact p');
 
-String.prototype.breakAt = function(breakAt) {
-  return this.substr(0,breakAt);
-};
+let address1 = siteContent.contact.address.substring(0, 18);
+let address2 = siteContent.contact.address.substring(19, 33);
 
-let address = siteContent['contact']['address'];
-spacedAddress = address.breakAt(18);
-console.log(spacedAddress);
+let newAddress = `${address1} \n ${address2}`;
+contactP[0].textContent = newAddress;
+contactP[0].style.whiteSpace = "pre-line";
 
-
-// String.prototype.breakAt = function(breakAt) {
-//   return this.substr(0,breakAt) + '\n' + this.substr(breakAt);
-// };
-
-// let address = siteContent['contact']['address'];
-// var spacedAddress = address.breakAt(18);
-// console.log(spacedAddress);
-
-
-// let address = siteContent['contact']['address'];
-// var splitAddress = address.split(' ');
-// let addressTop = splitAddress[0] + ' ' + splitAddress[1] + ' ' + splitAddress[2] + ' ' + splitAddress[3];
-// let addressBottom = splitAddress[4] + ' ' + splitAddress[5] + ' ' + splitAddress[6];
-// console.log(addressTop);
-// console.log(addressBottom);
-
-
-
-// contactAdressP1.textContent = spacedAddress;
-
-
-
+contactP[0].textContent = newAddress;
+contactP[1].textContent = siteContent.contact.phone;
+contactP[2].textContent = siteContent.contact.email;
