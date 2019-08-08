@@ -67,7 +67,6 @@ addedLinks.forEach((element) =>{
   element.style.color = 'green';
 })
 
-
 //Update h1 - Insearting "\n" to put text on new line
 //h1 is now on 3 lines
 let cta = document.querySelector('h1');
@@ -94,7 +93,6 @@ h4[1].textContent = siteContent['main-content']['about-h4'];
 h4[2].textContent = siteContent['main-content']['services-h4'];
 h4[3].textContent = siteContent['main-content']['product-h4'];
 h4[4].textContent = siteContent['main-content']['vision-h4'];
-
 
 //Update paragraph content for all paragraphs in main-content section
 let pTag = document.querySelectorAll('section div p');
