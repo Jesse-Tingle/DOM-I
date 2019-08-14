@@ -39,4 +39,89 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//Add content to navbar
+let allLinks = document.querySelectorAll('a');
+allLinks.forEach((element, i) => {
+  element.textContent = siteContent['nav'][`nav-item-${i + 1}`];
+})
+
+//Create Home link for navbar
+let homeNavItem = document.createElement('a');
+homeNavItem.textContent = 'Home';
+
+//Create Blog link for navbar
+let blogNavItem = document.createElement('a');
+blogNavItem.textContent = 'Blog';
+
+//Add Home link and Blog link
+let nav = document.getElementsByTagName('nav');
+nav[0].prepend(homeNavItem); //Adds Home link on beginning of navbar
+nav[0].appendChild(blogNavItem); //Adds Blog link on end of navbar
+
+//Changes navbar text color to green
+let addedLinks = document.querySelectorAll('a');
+console.log(addedLinks);
+addedLinks.forEach((element) =>{
+  element.style.color = 'green';
+})
+
+//Update h1 - Insearting "\n" to put text on new line
+//h1 is now on 3 lines
+let cta = document.querySelector('h1');
+let header1 = siteContent.cta.h1.substring(0, 3);
+let header2 = siteContent.cta.h1.substring(3, 6);
+let header3 = siteContent.cta.h1.substring(6, 14);
+
+let newHeader = `${header1} \n ${header2} \n ${header3}`;
+cta.textContent = newHeader;
+cta.style.whiteSpace = "pre-line"; //whiteSpace prototype allows \n to function in the DOM
+
+//Update button
+let button = document.querySelector('button');
+button.textContent = siteContent['cta']['button'];
+
+//Update img src
+let ctaImage = document.querySelector('#cta-img');
+ctaImage.setAttribute('src', siteContent['cta']['img-src']);
+
+//Update h4's for paragraph headings
+let h4 = document.querySelectorAll('section div h4');
+h4[0].textContent = siteContent['main-content']['features-h4'];
+h4[1].textContent = siteContent['main-content']['about-h4'];
+h4[2].textContent = siteContent['main-content']['services-h4'];
+h4[3].textContent = siteContent['main-content']['product-h4'];
+h4[4].textContent = siteContent['main-content']['vision-h4'];
+
+//Update paragraph content for all paragraphs in main-content section
+let pTag = document.querySelectorAll('section div p');
+pTag[0].textContent = siteContent['main-content']['features-content'];
+pTag[1].textContent = siteContent['main-content']['about-content'];
+pTag[2].textContent = siteContent['main-content']['services-content'];
+pTag[3].textContent = siteContent['main-content']['product-content'];
+pTag[4].textContent = siteContent['main-content']['vision-content'];
+
+//Update img src
+let middleImage = document.querySelector('#middle-img');
+middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+//Update h4 in contact section
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+//Update Contact section firtst p tag - Insearting "\n" to put text on new line
+//First p tag is now on 2 lines
+let contactP = document.querySelectorAll('.contact p');
+
+let address1 = siteContent.contact.address.substring(0, 18);
+let address2 = siteContent.contact.address.substring(19, 33);
+
+let newAddress = `${address1} \n ${address2}`;
+contactP[0].textContent = newAddress;
+contactP[0].style.whiteSpace = "pre-line"; //whiteSpace prototype allows \n to function in the DOM
+
+//Displaying Address, Phone, and Email
+contactP[0].textContent = newAddress;
+contactP[1].textContent = siteContent.contact.phone;
+contactP[2].textContent = siteContent.contact.email;
